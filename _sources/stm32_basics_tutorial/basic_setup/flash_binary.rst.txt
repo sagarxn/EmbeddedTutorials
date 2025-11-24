@@ -1,6 +1,11 @@
 Flash Binary
 ============
 
+.. contents:: Contents
+   :depth: 2
+   :local:
+
+
 There are different methods to flash binary. We use **ST-Link** or **JLink** to flash binary to stm32 microcontrollers.
 
 To install **stlink-tools**, **jlink** and **STM32CubeProgrammer**, see `installation <../../getting_started/installation.html>`_ and also `setup <../../getting_started/setup.html>`_.

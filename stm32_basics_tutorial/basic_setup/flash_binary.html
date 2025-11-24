@@ -14,6 +14,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cb963dba" />
 
   
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=fc837d61"></script>
@@ -100,10 +101,24 @@
              
   <section id="flash-binary">
 <h1>Flash Binary<a class="headerlink" href="#flash-binary" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#flash-using-st-link" id="id5">1. Flash using ST-Link</a></p>
+<ul>
+<li><p><a class="reference internal" href="#flash-using-command" id="id6">1.1. Flash using command</a></p></li>
+<li><p><a class="reference internal" href="#makefile-setup-for-flasing-using-st-link" id="id7">1.2. Makefile setup for flasing using ST-Link</a></p></li>
+<li><p><a class="reference internal" href="#cmakelists-txt-setup-for-flashing-using-st-link" id="id8">1.2. CMakeLists.txt setup for flashing using ST-Link</a></p></li>
+<li><p><a class="reference internal" href="#bash-script-setup-for-flashing-using-st-link" id="id9">1.3. Bash script setup for flashing using ST-Link</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#flash-using-jlink" id="id10">2. Flash using JLink</a></p></li>
+</ul>
+</nav>
 <p>There are different methods to flash binary. We use <strong>ST-Link</strong> or <strong>JLink</strong> to flash binary to stm32 microcontrollers.</p>
 <p>To install <strong>stlink-tools</strong>, <strong>jlink</strong> and <strong>STM32CubeProgrammer</strong>, see <a class="reference external" href="../../getting_started/installation.html">installation</a> and also <a class="reference external" href="../../getting_started/setup.html">setup</a>.</p>
 <section id="flash-using-st-link">
-<h2>1. Flash using ST-Link<a class="headerlink" href="#flash-using-st-link" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">1. Flash using ST-Link</a><a class="headerlink" href="#flash-using-st-link" title="Link to this heading"></a></h2>
 <p>Connect your <strong>ST-Link</strong> to your <strong>microcontroller</strong>:</p>
 <div class="line-block">
 <div class="line">- <strong>SWCLK</strong> of stlink to <strong>SWCLK</strong> of controller</div>
@@ -112,7 +127,7 @@
 </div>
 <p>If you want to provide power to controller using stlink, connect their <code class="docutils literal notranslate"><span class="pre">3V3</span></code>.They are connected internally or through mini jumpers on the boards.</p>
 <section id="flash-using-command">
-<h3>1.1. Flash using command<a class="headerlink" href="#flash-using-command" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">1.1. Flash using command</a><a class="headerlink" href="#flash-using-command" title="Link to this heading"></a></h3>
 <p>Run this commnad in Terminal.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-c3RsaW5rLXRvb2xz" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-c3RsaW5rLXRvb2xz" name="c3RsaW5rLXRvb2xz" role="tab" tabindex="0">stlink-tools</button><button aria-controls="panel-0-U1RNMzJDdWJlUHJvZ3JhbW1lcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-U1RNMzJDdWJlUHJvZ3JhbW1lcg==" name="U1RNMzJDdWJlUHJvZ3JhbW1lcg==" role="tab" tabindex="-1">STM32CubeProgrammer</button></div><div aria-labelledby="tab-0-c3RsaW5rLXRvb2xz" class="sphinx-tabs-panel group-tab" id="panel-0-c3RsaW5rLXRvb2xz" name="c3RsaW5rLXRvb2xz" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># st-flash [--reset] write &lt;build-directory/binaryfile.bin&gt; &lt;start-address&gt;</span>
@@ -133,14 +148,14 @@ STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span clas
 <p>You do not need to write the long commnad every time, you can add them in <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> or create <code class="docutils literal notranslate"><span class="pre">flash.sh</span></code>.</p>
 </section>
 <section id="makefile-setup-for-flasing-using-st-link">
-<h3>1.2. Makefile setup for flasing using ST-Link<a class="headerlink" href="#makefile-setup-for-flasing-using-st-link" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">1.2. Makefile setup for flasing using ST-Link</a><a class="headerlink" href="#makefile-setup-for-flasing-using-st-link" title="Link to this heading"></a></h3>
 <ul>
 <li><p>Add these at the bottom of <strong>Makefile</strong>.</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">flash</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">BUILD_DIR</span><span class="k">)</span>/<span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>.<span class="n">bin</span>
 <span class="w">	</span>st-flash<span class="w"> </span>write<span class="w"> </span><span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>TARGET<span class="k">)</span>.bin<span class="w"> </span>0x8000000
 
 <span class="nf">pflash</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">BUILD_DIR</span><span class="k">)</span>/<span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>.<span class="n">bin</span>
-<span class="w">	</span>CubeProgrammer<span class="w"> </span>-c<span class="w"> </span><span class="nv">port</span><span class="o">=</span>SWD<span class="w"> </span>-w<span class="w"> </span><span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>TARGET<span class="k">)</span>.bin<span class="w"> </span>0x8000000
+<span class="w">	</span>STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span class="nv">port</span><span class="o">=</span>SWD<span class="w"> </span>-w<span class="w"> </span><span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>TARGET<span class="k">)</span>.bin<span class="w"> </span>0x8000000
 </pre></div>
 </div>
 <p>If you want to <strong>reset after flash</strong>, update to:</p>
@@ -148,7 +163,7 @@ STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span clas
 <span class="w">	</span>st-flash<span class="w"> </span>--reset<span class="w"> </span>write<span class="w"> </span><span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>TARGET<span class="k">)</span>.bin<span class="w"> </span>0x8000000
 
 <span class="nf">pflash</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">BUILD_DIR</span><span class="k">)</span>/<span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>.<span class="n">bin</span>
-<span class="w">	</span>CubeProgrammer<span class="w"> </span>-c<span class="w"> </span><span class="nv">port</span><span class="o">=</span>SWD<span class="w"> </span>-w<span class="w"> </span><span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>TARGET<span class="k">)</span>.bin<span class="w"> </span>0x8000000<span class="w"> </span>-c<span class="w"> </span><span class="nv">port</span><span class="o">=</span>SWD<span class="w"> </span><span class="nv">reset</span><span class="o">=</span>SWrst
+<span class="w">	</span>STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span class="nv">port</span><span class="o">=</span>SWD<span class="w"> </span>-w<span class="w"> </span><span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>TARGET<span class="k">)</span>.bin<span class="w"> </span>0x8000000<span class="w"> </span>-c<span class="w"> </span><span class="nv">port</span><span class="o">=</span>SWD<span class="w"> </span><span class="nv">reset</span><span class="o">=</span>SWrst
 </pre></div>
 </div>
 </li>
@@ -165,7 +180,7 @@ STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span clas
 </ul>
 </section>
 <section id="cmakelists-txt-setup-for-flashing-using-st-link">
-<h3>1.2. CMakeLists.txt setup for flashing using ST-Link<a class="headerlink" href="#cmakelists-txt-setup-for-flashing-using-st-link" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">1.2. CMakeLists.txt setup for flashing using ST-Link</a><a class="headerlink" href="#cmakelists-txt-setup-for-flashing-using-st-link" title="Link to this heading"></a></h3>
 <ul>
 <li><p>Add these lines at the bottom of <strong>CMakeLists.txt</strong>.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># Flash target</span>
@@ -199,7 +214,7 @@ STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span clas
 </ul>
 </section>
 <section id="bash-script-setup-for-flashing-using-st-link">
-<h3>1.3. Bash script setup for flashing using ST-Link<a class="headerlink" href="#bash-script-setup-for-flashing-using-st-link" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">1.3. Bash script setup for flashing using ST-Link</a><a class="headerlink" href="#bash-script-setup-for-flashing-using-st-link" title="Link to this heading"></a></h3>
 <ul>
 <li><p>Create <code class="docutils literal notranslate"><span class="pre">flash.sh</span></code> at project folder.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>flash.sh
@@ -246,7 +261,7 @@ STM32_Programmer_CLI<span class="w"> </span>-c<span class="w"> </span><span clas
 </section>
 </section>
 <section id="flash-using-jlink">
-<h2>2. Flash using JLink<a class="headerlink" href="#flash-using-jlink" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">2. Flash using JLink</a><a class="headerlink" href="#flash-using-jlink" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Connect your <strong>JLLink</strong> to your <strong>microcontroller</strong>:</p>
 <ul class="simple">
