@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPIO Input &mdash; Embedded Tutorials 1.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cb963dba" />
 
@@ -17,8 +17,8 @@
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=fc837d61"></script>
-      <script src="../../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
       <script src="../../_static/custom.js?v=5fde6192"></script>
@@ -125,7 +125,7 @@
 </ul>
 <p>When VCC is appled to input pin, the input state will be high. And when GND is applied to input pin, the input state will be low. But if input pin is disconnected, the input is on floating state and it is hard to predict. So to remove such ambiguity pull-up or pull-down resistors are connected to input pin.</p>
 <p>Microcontrollers have internal pull-up/pull-down resistors which can be connectd by programming. We also can connect external pull-up/pull-down resistors. Typical value for pull-up/pull-down resistors are <strong>4.7K</strong> and <strong>10K</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/Pull-up-and-Pull-down-Resistor.png"><img alt="Pull-up-and-Pull-down-Resistor" class="align-center" src="../../_images/Pull-up-and-Pull-down-Resistor.png" style="width: 300px;" />
+<a class="reference internal image-reference" href="../../_images/Pull-up-and-Pull-down-Resistor.png"><img alt="Pull-up-and-Pull-down-Resistor" class="align-center" src="../../_images/Pull-up-and-Pull-down-Resistor.png" width="300" />
 </a>
 <p>Pull-up resistor connects the input pin to VCC and pull-down resistor connects the input pin to GND. When input pin is not connected, pull-up resistor connects the input pin to VCC and pull-down resistor connects the input pin to GND. So, the input state will be high and low respectively.</p>
 <p>For Open Drain output, pull-up resistor is used. For Open Collector output, pull-down resistor is used. Signals with pull-ups tend to be less sensitive to noise in noisy environments (e.g., industrial environments) because they are biased toward the high state.</p>

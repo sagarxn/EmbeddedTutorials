@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sending and Receiving Packets &mdash; Embedded Tutorials 1.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cb963dba" />
 
@@ -17,8 +17,8 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=fc837d61"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
       <script src="../_static/custom.js?v=5fde6192"></script>
@@ -626,7 +626,7 @@ CRC-8 hash: f4
 <li><p>Connect the <code class="docutils literal notranslate"><span class="pre">TX</span> <span class="pre">pin</span></code> of <code class="docutils literal notranslate"><span class="pre">Sender</span></code> and <code class="docutils literal notranslate"><span class="pre">RX</span> <span class="pre">pin</span></code> of <code class="docutils literal notranslate"><span class="pre">Receiver</span></code>. Common <code class="docutils literal notranslate"><span class="pre">GND</span></code> of both.</p></li>
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">Serial</span> <span class="pre">Monitor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Arduino</span> <span class="pre">IDE</span></code>. Set boudrate to <code class="docutils literal notranslate"><span class="pre">115200</span></code> or that in your code. You will see the parsed data.</p></li>
 </ul>
-<a class="padded-image reference internal image-reference" href="../_images/receiving_in_arduino.png"><img alt="receiving_in_arduino.png" class="padded-image align-center" src="../_images/receiving_in_arduino.png" style="width: 100%;" />
+<a class="padded-image reference internal image-reference" href="../_images/receiving_in_arduino.png"><img alt="receiving_in_arduino.png" class="align-center padded-image" src="../_images/receiving_in_arduino.png" style="width: 100%;" />
 </a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -650,7 +650,7 @@ CRC-8 hash: f4
 </li>
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">Connectivity</span></code> and select any <code class="docutils literal notranslate"><span class="pre">USART</span></code> with mode <code class="docutils literal notranslate"><span class="pre">Asynchronous</span></code>. Under <code class="docutils literal notranslate"><span class="pre">DMA</span> <span class="pre">settings</span></code>, enable <code class="docutils literal notranslate"><span class="pre">DMA</span></code> for <code class="docutils literal notranslate"><span class="pre">Transmit</span></code>. Follow the <a class="reference external" href="../stm32_basics_tutorial.html">UART with DMA tutorial</a> to setup more details.</p></li>
 <li><p>Also assign an <code class="docutils literal notranslate"><span class="pre">LED</span></code> pin for <code class="docutils literal notranslate"><span class="pre">GPIO_Output.</span></code></p>
-<a class="padded-image reference internal image-reference" href="../_images/sending_packets_cubemx.png"><img alt="sending_packets_cubemx.png" class="padded-image align-center" src="../_images/sending_packets_cubemx.png" style="width: 100%;" />
+<a class="padded-image reference internal image-reference" href="../_images/sending_packets_cubemx.png"><img alt="sending_packets_cubemx.png" class="align-center padded-image" src="../_images/sending_packets_cubemx.png" style="width: 100%;" />
 </a>
 </li>
 <li><p>Follow <a class="reference external" href="cpp_setup_in_stm32.html">C++ setup tutorial</a> and setup up to compile <code class="docutils literal notranslate"><span class="pre">C++</span></code> souce codes. In the <a class="reference external" href="cpp_setup_in_stm32.html">C++ setup tutorial</a>, you have already created <code class="docutils literal notranslate"><span class="pre">app.h</span></code> and <code class="docutils literal notranslate"><span class="pre">app.cpp</span></code>, and blinked the LED. Reach to that point.</p></li>
@@ -763,7 +763,7 @@ CRC-8 hash: f4
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">Connectivity</span></code> and select any <code class="docutils literal notranslate"><span class="pre">USART</span></code> with mode <code class="docutils literal notranslate"><span class="pre">Asynchronous</span></code>. Under <code class="docutils literal notranslate"><span class="pre">DMA</span> <span class="pre">settings</span></code>, enable <code class="docutils literal notranslate"><span class="pre">DMA</span></code> for <code class="docutils literal notranslate"><span class="pre">Receive</span></code>. Follow the <a class="reference external" href="../stm32_basics_tutorial.html">UART with DMA tutorial</a> to setup more details.</p></li>
 <li><p>Assign assign an <code class="docutils literal notranslate"><span class="pre">LED</span></code> pin for <code class="docutils literal notranslate"><span class="pre">GPIO_Output.</span></code> If you want to print over <code class="docutils literal notranslate"><span class="pre">USB</span></code>, enable <code class="docutils literal notranslate"><span class="pre">USB</span></code> and <code class="docutils literal notranslate"><span class="pre">Virtual</span> <span class="pre">COM</span> <span class="pre">Port</span></code>. See <a class="reference external" href="../stm32_basics_tutorial/usb/usb_printf.html">USB tutorial</a>.</p></li>
 </ul>
-<a class="padded-image reference internal image-reference" href="../_images/receiving_packets_cubemx.png"><img alt="receiving_packets_cubemx.png" class="padded-image align-center" src="../_images/receiving_packets_cubemx.png" style="width: 100%;" />
+<a class="padded-image reference internal image-reference" href="../_images/receiving_packets_cubemx.png"><img alt="receiving_packets_cubemx.png" class="align-center padded-image" src="../_images/receiving_packets_cubemx.png" style="width: 100%;" />
 </a>
 <ul>
 <li><p>Follow <a class="reference external" href="cpp_setup_in_stm32.html">C++ setup tutorial</a> and setup up to compile <code class="docutils literal notranslate"><span class="pre">C++</span></code> souce codes. In the <a class="reference external" href="cpp_setup_in_stm32.html">C++ setup tutorial</a>, you have already created <code class="docutils literal notranslate"><span class="pre">app.h</span></code> and <code class="docutils literal notranslate"><span class="pre">app.cpp</span></code>, and blinked the LED. Reach to that point.</p></li>

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PWM &mdash; Embedded Tutorials 1.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cb963dba" />
 
@@ -17,11 +17,11 @@
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=fc837d61"></script>
-      <script src="../../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
-      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
       <script src="../../_static/custom.js?v=5fde6192"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -114,7 +114,7 @@
 <section id="introduction">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">1. Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>Pulse Width Modulation (PWM) is a technique used in embedded systems to generate analog-like signals using digital means. It works by varying the width of pulses (the “on” time) in a periodic waveform to encode information or control power delivered to a load.</p>
-<a class="reference internal image-reference" href="../../_images/PWM-and-Duty-Cycle.jpg"><img alt="PWM-and-Duty-Cycle" class="align-center" src="../../_images/PWM-and-Duty-Cycle.jpg" style="width: 300px;" />
+<a class="reference internal image-reference" href="../../_images/PWM-and-Duty-Cycle.jpg"><img alt="PWM-and-Duty-Cycle" class="align-center" src="../../_images/PWM-and-Duty-Cycle.jpg" width="300" />
 </a>
 <p>The amplitude of PWM is equal to VDD of microcontroller; i.e. for arduino controller, it is 5V; for stm32 controllers, it is 3.3V.</p>
 <p>The average output of a PWM signal is given by <span class="math notranslate nohighlight">\(V_{avg} = \frac{\text{Pulse Width}}{\text{Time Period}} \cdot V_{dd}\)</span>.</p>
@@ -318,7 +318,7 @@
 <p>To get good response from DC motors, higher PWM frequency is better but motordriver should be capable to handle that frequency. Lower frequency can make <strong>tunning sound</strong> from DC motors. I used <code class="docutils literal notranslate"><span class="pre">8KHz</span></code> pwm frequency for <strong>planetary gear motors</strong>.</p>
 </div>
 <p>Go to <code class="docutils literal notranslate"><span class="pre">Pinout</span> <span class="pre">&amp;</span> <span class="pre">Configuration</span> <span class="pre">&gt;</span> <span class="pre">Timers</span> <span class="pre">&gt;</span> <span class="pre">TIM1</span> <span class="pre">&gt;</span> <span class="pre">Parameter</span> <span class="pre">Settings</span></code> and set the <strong>ARR</strong> value to <code class="docutils literal notranslate"><span class="pre">19999</span></code> and <strong>PSC</strong> value to <code class="docutils literal notranslate"><span class="pre">167</span></code>.</p>
-<a class="padded-image reference internal image-reference" href="../../_images/freq_change.webp"><img alt="PWM Frequency Configuration" class="padded-image align-center" src="../../_images/freq_change.webp" style="width: 100%;" />
+<a class="padded-image reference internal image-reference" href="../../_images/freq_change.webp"><img alt="PWM Frequency Configuration" class="align-center padded-image" src="../../_images/freq_change.webp" style="width: 100%;" />
 </a>
 <p>Generate the code, change the <strong>duty cycle</strong> between <code class="docutils literal notranslate"><span class="pre">0%</span></code> and <code class="docutils literal notranslate"><span class="pre">100%</span></code>. Observe the output frequency on the oscilloscope.</p>
 <p><strong>Assignment</strong>: Control the angle of a servo motor.</p>

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Controller &mdash; Embedded Tutorials 1.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=cb963dba" />
 
@@ -17,8 +17,8 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=fc837d61"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
       <script src="../_static/custom.js?v=5fde6192"></script>
@@ -123,28 +123,28 @@
 <p>A game controller is an important input device for manually controlling a robot. Most game controllers generally have two joysticks, two triggers, two bumpers, four pad buttons, four user buttons, and three special buttons. Some game controllers also have a vibration motor, LEDs, and a speaker. Each joystick has two potentiometers for the X and Y axes and a push button. Each trigger has a potentiometer for its axis.</p>
 <p>The Xbox 360 and PlayStation controllers are two of the most popular game controllers. They can be connected to a computer using a USB cable or Bluetooth, and can also be connected to a microcontroller using USB or Bluetooth. In this tutorial, we are going to use a PS4 controller and an ESP32 WROOM32 module. The ESP32 supports both classic Bluetooth and BLE, while the PS4 controller only supports classic Bluetooth.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/ps4.jpg"><img alt="PS4 Controller" src="../_images/ps4.jpg" style="width: 500px;" />
+<a class="reference internal image-reference" href="../_images/ps4.jpg"><img alt="PS4 Controller" src="../_images/ps4.jpg" width="500" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>PS4 Controller (DualShock)</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/xbox.jpg"><img alt="Xbox 360 Controller" src="../_images/xbox.jpg" style="width: 500px;" />
+<a class="reference internal image-reference" href="../_images/xbox.jpg"><img alt="Xbox 360 Controller" src="../_images/xbox.jpg" width="500" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>Xbox 360 Controller</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/ps4_label.webp"><img alt="PS4 Controller Label" src="../_images/ps4_label.webp" style="width: 600px;" />
+<a class="reference internal image-reference" href="../_images/ps4_label.webp"><img alt="PS4 Controller Label" src="../_images/ps4_label.webp" width="600" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>PS4 Controller Label</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="../_images/xbox_label.jpg"><img alt="Xbox 360 Controller Label" src="../_images/xbox_label.jpg" style="width: 600px;" />
+<a class="reference internal image-reference" href="../_images/xbox_label.jpg"><img alt="Xbox 360 Controller Label" src="../_images/xbox_label.jpg" width="600" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>Xbox 360 Controller Label</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
@@ -253,7 +253,7 @@ The JoyData structure is packed to ensure that the data is aligned correctly in 
 <section id="setting-esp32-as-receiver">
 <h2><a class="toc-backref" href="#id29" role="doc-backlink">4. Setting ESP32 as Receiver</a><a class="headerlink" href="#setting-esp32-as-receiver" title="Link to this heading"></a></h2>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../_images/esp32_wroom1.jpg"><img alt="ESP32 WROOM32" src="../_images/esp32_wroom1.jpg" style="width: 300px;" />
+<a class="reference internal image-reference" href="../_images/esp32_wroom1.jpg"><img alt="ESP32 WROOM32" src="../_images/esp32_wroom1.jpg" width="300" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>DOIT ESP32 DEVKIT V1</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
@@ -884,7 +884,7 @@ The JoyData structure is packed to ensure that the data is aligned correctly in 
 <section id="setting-raspberry-pi-pico-w-as-receiver">
 <h2><a class="toc-backref" href="#id34" role="doc-backlink">5. Setting Raspberry Pi Pico W as Receiver</a><a class="headerlink" href="#setting-raspberry-pi-pico-w-as-receiver" title="Link to this heading"></a></h2>
 <figure class="align-center" id="id13">
-<a class="reference internal image-reference" href="../_images/pi_pico_w1.jpg"><img alt="Raspberry Pi Pico W" src="../_images/pi_pico_w1.jpg" style="width: 300px;" />
+<a class="reference internal image-reference" href="../_images/pi_pico_w1.jpg"><img alt="Raspberry Pi Pico W" src="../_images/pi_pico_w1.jpg" width="300" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>Raspberry Pi Pico W</strong></span><a class="headerlink" href="#id13" title="Link to this image"></a></p>

@@ -17,7 +17,7 @@ In STM32 project, ``arm_math`` header and source files are inside ``Drivers >  C
 2. Linking Arm Math Library for ARM Cortex-M3
 ---------------------------------------------
 
-You can link the library by adding the GCC library path ``Drivers/CMSIS/Lib/GCC`` and the linker flag ``libarm_cortexM3l_math.a`` in the Makefile or CMakeList.txt.
+You can link the library by adding the GCC library path ``Drivers/CMSIS/Lib/GCC`` and the linker flag ``libarm_cortexM3l_math`` in the Makefile or CMakeList.txt.
 
 .. tabs::
 
@@ -26,8 +26,8 @@ You can link the library by adding the GCC library path ``Drivers/CMSIS/Lib/GCC`
       .. code-block:: none
 
          # libraries
-         LIBS = -lc -lm -lnosys -larm_cortexM3l_math.a
-         LIBDIR = -LDrivers/CMSIS/Lib/GCC/
+         LIBS = -lc -lm -lnosys -larm_cortexM3l_math
+         LIBDIR = -LDrivers/CMSIS/Lib/GCC
 
    .. group-tab:: CMakeLists.txt
 
@@ -85,33 +85,6 @@ To use the arm math library, you need to include the header file ``arm_math.h`` 
 .. code-block:: c
 
    #include "arm_math.h"
-
-Let's suppose you want to calculate **sine** and **cosine** of an angle. To do so, you need to add the respective sources in the **Makefile** or **CMakeLists.txt**.
-
-.. tabs::
-
-   .. group-tab:: Makefile
-
-      .. code-block:: none
-         :emphasize-lines: 4-5
-      
-         # C sources
-         C_SOURCES = \
-         ...
-         Drivers/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c \
-         Drivers/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c
-
-   .. group-tab:: CMakeLists.txt
-
-      .. code-block:: cmake
-         :emphasize-lines: 4-5
-
-         # Add sources to executable
-         target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-            # Add user sources here
-            Drivers/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c
-            Drivers/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c
-         )
 
 Don't forget to define ARM_MATH version in the **Makefile** or **CMakeLists.txt**.
 
